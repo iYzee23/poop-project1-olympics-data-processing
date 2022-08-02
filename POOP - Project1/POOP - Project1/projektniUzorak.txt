@@ -1,0 +1,55 @@
+OlimpicGames
+	allGames : map<pair<int, string>, Game>
+	allCountries : map<string, Country>
+	allEvents : map<string, Event>
+	allAthletes : map<int, Athlete>
+	allCompetitors : vector<Competitor>
+	height : double
+	weight : double
+	+ set<Sport>
+	+ map<Country, tuple<int, int, int>> //sort, for_each_n
+	+ map<Country, tuple<int, int, int>> ==> set<Country> 
+	+ set<Athlete> ==> ubacujemo cim naidjemo
+	   vector<Athlete> ==> oni koji su osvojili //sort, for_each_n
+	   // dodamo bool u Athlete, pa prvi put postavimo na true
+	   // map<Athlete, pair<bool, bool>>
+	+ map<Athlete, pair<bool, bool>>
+	+ map<Athlete, pair<bool, bool>>
+	+ tuple<Team, int, string>
+	+ set<string>
+
+Competitor
+	game : Game
+	event : Event
+	country : Country
+	medal : string
+
+Athlete
+	id : int
+	name : string
+	sex : char
+	age : string
+	height : string
+	weight : string
+	
+Team
+	athletes : vector<Athlete>
+
+Games
+	year : int
+	type : string
+	city : string
+	competitors : vector<Competitor>
+
+Country
+	name : string
+	competitors : vector<Competitor>
+
+Sport
+	name : string
+	events : vector<Event>
+
+Event
+	name : string
+	type : string
+	sport : Sport
